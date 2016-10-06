@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soap.formacion.ipartek.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://soap.formacion.ipartek.com" xmlns:intf="http://soap.formacion.ipartek.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://soap.formacion.ipartek.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="dameFrase">
+    <complexType/>
+   </element>
+   <element name="dameFraseResponse">
+    <complexType>
+     <sequence>
+      <element name="dameFraseReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="pedirFrase">
+    <complexType>
+     <sequence>
+      <element name="idFrase" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="pedirFraseResponse">
+    <complexType>
+     <sequence>
+      <element name="pedirFraseReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="pedirFraseResponse">
+
+      <wsdl:part element="impl:pedirFraseResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="pedirFraseRequest">
+
+      <wsdl:part element="impl:pedirFrase" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="dameFraseResponse">
+
+      <wsdl:part element="impl:dameFraseResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="dameFraseRequest">
+
+      <wsdl:part element="impl:dameFrase" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="FrasesMotivacion">
+
+      <wsdl:operation name="dameFrase">
+
+         <wsdl:input message="impl:dameFraseRequest" name="dameFraseRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:dameFraseResponse" name="dameFraseResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="pedirFrase">
+
+         <wsdl:input message="impl:pedirFraseRequest" name="pedirFraseRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:pedirFraseResponse" name="pedirFraseResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="FrasesMotivacionSoapBinding" type="impl:FrasesMotivacion">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="dameFrase">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="dameFraseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="dameFraseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="pedirFrase">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="pedirFraseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="pedirFraseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="FrasesMotivacionService">
+
+      <wsdl:port binding="impl:FrasesMotivacionSoapBinding" name="FrasesMotivacion">
+
+         <wsdlsoap:address location="http://localhost:8080/HelloSOAP/services/FrasesMotivacion"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
